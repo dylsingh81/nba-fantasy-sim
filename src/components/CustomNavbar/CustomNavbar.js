@@ -9,14 +9,17 @@ function CustomNavbar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/">
+          <LinkContainer className="home-css" to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/about">
-            <Nav.Link>About</Nav.Link>
+          <LinkContainer to="/team">
+            <Nav.Link>Team Builer</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/contact">
-            <Nav.Link>Contact</Nav.Link>
+          <LinkContainer to="/simulator">
+            <Nav.Link>Simulator</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/roster">
+            <Nav.Link>Rosters</Nav.Link>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>

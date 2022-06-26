@@ -1,0 +1,10 @@
+.mask {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.home-css{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}

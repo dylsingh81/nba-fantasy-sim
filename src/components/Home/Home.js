@@ -9,53 +9,44 @@ const Home = () => {
       <Carousel.Item>
         <div className="mask d-flex justify-content-center align-items-center h-100">
           <div className="text-white text-center">
-            <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
-            <h5 className="mb-4">Best & free guide of responsive web design</h5>
+            <h1 className="mb-4 display-1 font-weight-bold ">NBA Fantasy GM</h1>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Start tutorial</a>
+              role="button" rel="nofollow" target="">Build Team</a>
             <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="" role="button">Download MDB UI KIT</a>
+              target="" role="button">Run Simulation</a>
           </div>
         </div>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
 
         <div className="mask d-flex justify-content-center align-items-center h-100">
           <div className="text-white text-center">
-            <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
-            <h5 className="mb-4">Best & free guide of responsive web design</h5>
+            <h1 className="mb-3 display-2">Build your Squad</h1>
+            <h5 className="mb-4">Use a $50 budget to build the perfect squad</h5>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Start tutorial</a>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="" role="button">Download MDB UI KIT</a>
+              role="button" rel="nofollow" target="">Start</a>
           </div>
         </div>
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Test your LeGM skills in the Team Builder</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
 
         <div className="mask d-flex justify-content-center align-items-center h-100">
-          <div className="text-white text-center">
-            <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
-            <h5 className="mb-4">Best & free guide of responsive web design</h5>
+        <div className="text-white text-center">
+            <h1 className="mb-3 display-2">Run a Simulation</h1>
+            <h5 className="mb-4">Use built teams to see the results of a H2H matchup</h5>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Start tutorial</a>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="" role="button">Download MDB UI KIT</a>
+              role="button" rel="nofollow" target="">Start</a>
           </div>
         </div>
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <p>Upload two teams and see the resulting stats of a simulated game between them</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
