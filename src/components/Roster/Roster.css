@@ -1,10 +1,11 @@
-.mask {
+.roster-mask {
     height: 100vh;
     text-align: center;
     background-image: url('./images/goats.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;    
+    background-position: center center; 
+    padding-top: 10vh;   
 }
 
 .roster-table{
@@ -12,7 +13,5 @@
     overflow: scroll;
     height: 85vh;
     margin-left: 2vw !important;
-
     margin-right: 2vw !important;
-
 }

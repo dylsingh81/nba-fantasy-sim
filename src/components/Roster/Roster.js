@@ -17,7 +17,7 @@ function Roster() {
   });
 
   return (
-    <div className='mask'>
+    <div className='roster-mask'>
       <div className='roster-table'>
         <table className='table table-striped'>
           <thead>
