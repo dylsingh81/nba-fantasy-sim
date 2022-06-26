@@ -12,9 +12,9 @@ const Home = () => {
             <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
             <h5 className="mb-4">Best & free guide of responsive web design</h5>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="_blank">Start tutorial</a>
+              role="button" rel="nofollow" target="">Start tutorial</a>
             <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="_blank" role="button">Download MDB UI KIT</a>
+              target="" role="button">Download MDB UI KIT</a>
           </div>
         </div>
         <Carousel.Caption>
@@ -29,9 +29,9 @@ const Home = () => {
             <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
             <h5 className="mb-4">Best & free guide of responsive web design</h5>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="_blank">Start tutorial</a>
+              role="button" rel="nofollow" target="">Start tutorial</a>
             <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="_blank" role="button">Download MDB UI KIT</a>
+              target="" role="button">Download MDB UI KIT</a>
           </div>
         </div>
 
@@ -47,9 +47,9 @@ const Home = () => {
             <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
             <h5 className="mb-4">Best & free guide of responsive web design</h5>
             <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="_blank">Start tutorial</a>
+              role="button" rel="nofollow" target="">Start tutorial</a>
             <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="_blank" role="button">Download MDB UI KIT</a>
+              target="" role="button">Download MDB UI KIT</a>
           </div>
         </div>
 
