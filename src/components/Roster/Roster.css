@@ -1,10 +1,18 @@
 .mask {
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
+    background-image: url('./images/goats.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;    
 }
 
-.home-css{
-    margin-left: 2vw;
-    margin-right: 2vw;
+.roster-table{
+    background-color: rgba(255,255,255,0.85);
+    overflow: scroll;
+    height: 85vh;
+    margin-left: 2vw !important;
+
+    margin-right: 2vw !important;
+
 }
