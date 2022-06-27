@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Roster.css';
 import Papa from 'papaparse';
 import rosterCSV from '../../db/roster_trimmed.csv';
+import RosterTable from "./RosterTable/RosterTable";
 
 function Roster() {
 
@@ -19,25 +20,8 @@ function Roster() {
   return (
     <div className='roster-mask'>
       <div className='roster-table'>
-        <table className='table table-striped'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-            </tr>
-          </thead>
-          <tbody>
-            {roster.map((player, index) => {
-              return (
-                <tr key={index}>
-                  <td>{player[0]}</td>
-                  <td>{player[1]}</td>
-                </tr>
-              )
-            }
-            )}
-          </tbody>
-        </table>
+        
+        <RosterTable></RosterTable>
 
       </div>
     </div>
