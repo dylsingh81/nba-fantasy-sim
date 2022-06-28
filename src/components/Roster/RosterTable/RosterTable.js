@@ -145,7 +145,7 @@ function Table({ columns, data }) {
           width: "100%",
           margin: "auto"
         }}
-        className = "table"
+        className="table"
       >
 
         <thead>
@@ -188,21 +188,47 @@ function Table({ columns, data }) {
                   //if first column
                   if (cell.column.id === 'columnId_00.27830976550007236') {
                     if (row.original["Image Available"] === "Yes") {
-                      //console.log("Image Available");
                       //get player name
                       var playerName = row.original.name;
-                      //get player image; 
-                      //put dash between spaces in player name
-                      var playerNameDash = playerName.replace(/\s/g, "-");
-                      //remove any special characters
-                      var playerNameDashNoSpecial = playerNameDash.replace(/[^a-zA-Z0-9-]/g, "");
+                      //Remove all special characters except period and space and dash
+                      playerName = playerName.replace(/[^a-zA-Z0-9\s.-]/g, "");
+                      // Replace space with dash
+                      playerName = playerName.replace(/\s/g, "-");
                       // add path to player image
-                      var playerImagePath = require("../../player_images/" + playerNameDashNoSpecial + ".png");
+                      var playerImagePath = require("../../player_images/" + playerName + ".png");
                       
 
+                      //get team name
+                      var teamName = row.original.team;
+                      var era = row.original.Era;
+
+                      //Remove first 2 words if era is old
+                      if (era == "Old") {
+                        teamName = teamName.substring(teamName.indexOf(" ") + 1);
+                        teamName = teamName.substring(teamName.indexOf(" ") + 1);
+                      }
+
+                      //Remove leading spaces
+                      teamName = teamName.replace(/^\s+/g, "");
+                      //Replace space with dash
+                      teamName = teamName.replace(/\s/g, "-");
+
+                      // add path to team image
+                      var teamImagePath = require("../../team_images/" + teamName + ".svg");
+
+
+
                       return (
-                        <td key="key"> 
-                          <img src={playerImagePath} className = "player-icon" alt="Logo" />
+                        <td key="key">
+                          <div className="text-center">
+                            <div className="layered-container">
+                              <div className="image-bottom-container">
+                                <img className="image-bottom" src={playerImagePath} alt="" />
+                              </div>
+                              
+                              <img className="image-top" src={teamImagePath} data-src="" height="90" width="90" alt="Atlanta Hawks" title="Atlanta Hawks"></img>
+                            </div>
+                          </div>
                         </td>
                       )
                     }

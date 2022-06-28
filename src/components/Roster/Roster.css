@@ -9,7 +9,7 @@
 }
 
 .roster-table{
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(247, 247, 247, 0.75);
     overflow: scroll;
     height: 85vh;
     margin-left: 2vw !important;

@@ -1,3 +1,46 @@
-.player-icon{
+.player-icon {
     width: 260px;
+}
+
+
+img{
+    position: absolute;
+}
+
+.layered-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.image-top {
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+}
+
+.image-bottom {
+    position: relative;    
+    border-radius: 50%;
+    display: block;
+    max-width: 230px;
+    max-height: 95px;
+    width: auto;
+    height: auto;
+    margin: auto !important;
+    z-index: 3;
+}
+
+.image-bottom-container {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: auto !important;
+    max-width: fit-content;
+    max-height: fit-content;
+    z-index: 2;
+    background-color: #f2f2f2;
 }
