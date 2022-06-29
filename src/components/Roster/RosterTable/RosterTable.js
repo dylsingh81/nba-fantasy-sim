@@ -24,7 +24,7 @@ import {
 function DefaultColumnFilter({
   column: { filterValue, preFilteredRows, setFilter }
 }) {
-  const count = preFilteredRows.length;
+  //const count = preFilteredRows.length;
   //console.log(filterValue, preFilteredRows, setFilter);
   return (
     <div className="input-group">
