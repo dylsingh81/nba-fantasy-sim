@@ -285,7 +285,7 @@ function Table({ columns, data }) {
 
       </table>
 
-      <div className="pagination justify-content-end">
+      <div className="pagination justify-content-end py-2">
         <button className="btn " onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {"<<"}
         </button>{" "}
@@ -302,16 +302,17 @@ function Table({ columns, data }) {
         >
           {">>"}
         </button>{" "}
-        <span >
+        <span className="pt-2">
           Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
           </strong>{" "}
         </span>
-        <span>
+        <span className="pt-1 mx-2">
           | Go to page:{" "}
           <input
             type="number"
+            className="btn btn-outline-dark"
             defaultValue={pageIndex + 1}
             onChange={(e) => {
               const page = e.target.value ? Number(e.target.value) - 1 : 0;
@@ -321,6 +322,7 @@ function Table({ columns, data }) {
           />
         </span>{" "}
         <select
+          className="btn btn-outline-dark mx-2"
           value={pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
@@ -377,7 +379,8 @@ function RosterTable({ roster }) {
         "Footer": "",
         "accessor": "Position",
         "filter": "includes",
-        sortDescFirst: true
+        sortDescFirst: true,
+        Filter: SelectColumnFilter,
 
       },
       {
@@ -463,10 +466,7 @@ function RosterTable({ roster }) {
         "accessor": "postFade",
         disableFilters: true,
         sortDescFirst: true,
-      }
-
-
-
+      },
     ]
   ), []);
 
