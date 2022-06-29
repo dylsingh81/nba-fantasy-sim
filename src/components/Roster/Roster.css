@@ -1,7 +1,7 @@
 .roster-mask {
     height: 100vh;
     text-align: center;
-    background-image: url('./images/bg.png');
+    background-image: url('./images/bg2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
@@ -9,9 +9,10 @@
 }
 
 .roster-table{
-    background-color: rgba(247, 247, 247, 0.75);
+    background-color: rgba(247, 247, 247, 0.90);
     overflow: scroll;
     height: 85vh;
     margin-left: 2vw !important;
     margin-right: 2vw !important;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }

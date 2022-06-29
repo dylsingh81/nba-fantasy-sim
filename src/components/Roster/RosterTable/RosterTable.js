@@ -5,6 +5,7 @@ import {
   , useSortBy
   , usePagination
   , useFilters
+  
 
 
 } from "react-table";
@@ -24,15 +25,18 @@ function DefaultColumnFilter({
   column: { filterValue, preFilteredRows, setFilter }
 }) {
   const count = preFilteredRows.length;
-
+  //console.log(filterValue, preFilteredRows, setFilter);
   return (
-    <input
-      value={filterValue || ""}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
+    <div className="input-group">
+      <input
+        className="default-filter form-control"
+        value={filterValue || ""}
+        onChange={(e) => {
+          setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
+        }}
+        placeholder={`Search...`}
+      />
+    </div>
   );
 }
 // Default filters function Ended
@@ -54,19 +58,23 @@ function SelectColumnFilter({
 
   // Render a multi-select box
   return (
-    <select
-      value={filterValue}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined);
-      }}
-    >
-      <option value="">All</option>
-      {options.map((option, i) => (
-        <option key={i} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
+    <div className="input-group">
+      <select
+        value={filterValue}
+        className="form-control"
+        onChange={(e) => {
+          setFilter(e.target.value || undefined);
+        }}
+      >
+        <option value="">All</option>
+        {options.map((option, i) => (
+          <option key={i} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+
   );
 }
 
@@ -125,7 +133,8 @@ function Table({ columns, data }) {
       columns,
       data,
       defaultColumn, // Be sure to pass the defaultColumn option
-      filterTypes
+      filterTypes,
+      initialState: { pageSize: 10 },
     },
     useFilters,
 
@@ -139,30 +148,31 @@ function Table({ columns, data }) {
 
       <table
         {...getTableProps()}
+
         border={1}
         style={{
           borderCollapse: "collapse",
           width: "100%",
           margin: "auto"
         }}
-        className="table"
+        className="table table-hover table-striped cant-highlight table-bordered "
       >
 
-        <thead>
+        <thead className="align-middle">
           {headerGroups.map((group) => (
             <tr {...group.getHeaderGroupProps()}>
               {group.headers.map((column) => (
                 <th {...column.getHeaderProps()}>
 
-                  <div {...column.getSortByToggleProps()}>
-                    {column.render("Header")}
+                  <div className="filter-header" {...column.getSortByToggleProps()}>
+                    <span>{column.render("Header")}</span>
                     <span>
                       {column.isSorted
                         ? column.isSortedDesc
-                          ? " 🔽"
-                          : " 🔼"
+                          ? " ⬇"
+                          : " ⬆️"
                         : column.canSort
-                          ? "⏺"
+                          ? ""
                           : ""}
                     </span>
                   </div>
@@ -196,7 +206,7 @@ function Table({ columns, data }) {
                       playerName = playerName.replace(/\s/g, "-");
                       // add path to player image
                       var playerImagePath = require("../../player_images/" + playerName + ".png");
-                      
+
 
                       //get team name
                       var teamName = row.original.team;
@@ -219,13 +229,13 @@ function Table({ columns, data }) {
 
 
                       return (
-                        <td key="key">
+                        <td key="key" className="align-middle">
                           <div className="text-center">
                             <div className="layered-container">
                               <div className="image-bottom-container">
                                 <img className="image-bottom" src={playerImagePath} alt="" />
                               </div>
-                              
+
                               <img className="image-top" src={teamImagePath} data-src="" height="90" width="90" alt="Atlanta Hawks" title="Atlanta Hawks"></img>
                             </div>
                           </div>
@@ -235,13 +245,35 @@ function Table({ columns, data }) {
                     else {
                       //console.log("No Image")
                       return (
-                        <td key=""> No </td>
+                        <td key="" className="align-middle"> No </td>
                       );
                     }
                   }
                   else {
+                    // Get column header id
+                    var columnId = cell.column.id;
+                    //console.log(columnId);
+                    //Get name of column thats being sorted currently id
+
+                    var columnsState = headerGroups[0];
+                    //Loop through columns state and check if any column is sorted
+                    for (var i = 0; i < columnsState.headers.length; i++) {
+                      if (columnsState.headers[i].isSorted) {
+                        //If column is sorted, get id of column
+                        var sortedColumnId = columnsState.headers[i].id;
+                        //console.log(sortedColumnId);
+                      }
+                    }
+
+                    //console.log(sortedColumnId, columnId)
+                    var sortedColClass = ""
+                    if (sortedColumnId === columnId) {
+                      //console.log("HERE")
+                      sortedColClass = "sorted-cell "
+                    }
                     return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+
+                      <td className={sortedColClass + "align-middle"} {...cell.getCellProps()}>{cell.render("Cell")}</td>
                     );
                   }
                 })}
@@ -252,23 +284,24 @@ function Table({ columns, data }) {
 
       </table>
 
-      <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+      <div className="pagination justify-content-end">
+        <button className="btn " onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {"<<"}
         </button>{" "}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <button className="btn " onClick={() => previousPage()} disabled={!canPreviousPage}>
           {"<"}
         </button>{" "}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        <button className="btn " onClick={() => nextPage()} disabled={!canNextPage}>
           {">"}
         </button>{" "}
         <button
           onClick={() => gotoPage(pageCount - 1)}
           disabled={!canNextPage}
+          className="btn "
         >
           {">>"}
         </button>{" "}
-        <span>
+        <span >
           Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
@@ -310,11 +343,11 @@ function Table({ columns, data }) {
 function RosterTable({ roster }) {
 
   // Columns array. This array contains your table headings and accessors which maps keys from data array
+  //,Era,name,Image Available,team,Position,overallAttribute,closeShot,midRangeShot,threePointShot,freeThrow,shotIQ,offensiveConsistency,layup,standingDunk,drivingDunk,postHook,postFade,postControl,drawFoul,hands,interiorDefense,perimeterDefense,steal,block,lateralQuickness,helpDefenseIQ,passPerception,defensiveConsistency,speed,acceleration,strength,vertical,stamina,hustle,overallDurability,passAccuracy,ballHandle,speedWithBall,passIQ,passVision,offensiveRebound,defensiveRebound,overall_bin
   const columns = React.useMemo(() => (
     [
       {
         "id": "columnId_00.27830976550007236",
-        "Header": "IMAGE",
         "Footer": "",
         "accessor": "Key0",
         disableSortBy: true,
@@ -324,36 +357,115 @@ function RosterTable({ roster }) {
         "id": "columnId_00.8366168306389434",
         "Header": "Name",
         "Footer": "",
-        "accessor": "name"
+        "accessor": "name",
+        sortDescFirst: true
       },
       {
         "id": "columnId_00.9080443947570558",
         "Header": "Team",
         "Footer": "",
-        "accessor": "Key2",
+        "accessor": "team",
         Filter: SelectColumnFilter,
+        sortDescFirst: true
+
 
       },
       {
         "id": "columnId_00.40874175307236293",
         "Header": "Position",
         "Footer": "",
-        "accessor": "Key3",
-        "filter": "includes"
+        "accessor": "Position",
+        "filter": "includes",
+        sortDescFirst: true
+
       },
       {
         "id": "columnId_00.5762540192007892",
         "Header": "Overall",
         "Footer": "",
-        "accessor": "Key4"
+        "accessor": "overallAttribute",
+        sortDescFirst: true,
+        disableFilters: true,
+
       },
       {
         "id": "columnId_00.8424649446053207",
-        "Header": "3PT",
+        "Header": "Drive",
         "Footer": "",
-        "accessor": "Key5",
-        "filter": "includes"
+        "accessor": "closeShot",
+        sortDescFirst: true,
+        disableFilters: true,
+
+
+      },
+      {
+        "id": "columnId_00.898410086801098",
+        "Header": "Mid Range",
+        "Footer": "",
+        "accessor": "midRangeShot",
+        sortDescFirst: true,
+        disableFilters: true,
+
+      },
+      {
+        "id": "columnId_00.898410086801099",
+        "Header": "3Point",
+        "Footer": "",
+        "accessor": "threePointShot",
+        sortDescFirst: true,
+        disableFilters: true,
+      },
+      {
+        "id": "columnId_00.898410086801101",
+        "Header": "Assist",
+        "Footer": "",
+        "accessor": "shotIQ",
+        disableFilters: true,
+        sortDescFirst: true,
+      },
+      {
+        "id": "columnId_00.898410086801102",
+        "Header": "Rebound",
+        "Footer": "",
+        "accessor": "offensiveConsistency",
+        disableFilters: true,
+        sortDescFirst: true,
+      },
+      {
+        "id": "columnId_00.898410086801103",
+        "Header": "On-Ball Defense",
+        "Footer": "",
+        "accessor": "layup",
+        disableFilters: true,
+        sortDescFirst: true,
+      },
+      {
+        "id": "columnId_00.898410086801104",
+        "Header": "Help Defense",
+        "Footer": "",
+        "accessor": "standingDunk",
+        disableFilters: true,
+        sortDescFirst: true,
+      },
+      {
+        "id": "columnId_00.898410086801105",
+        "Header": "Turnover",
+        "Footer": "",
+        "accessor": "postHook",
+        disableFilters: true,
+        sortDescFirst: true,
+      },
+      {
+        "id": "columnId_00.898410086801106",
+        "Header": "Free Throw",
+        "Footer": "",
+        "accessor": "postFade",
+        disableFilters: true,
+        sortDescFirst: true,
       }
+
+
+
     ]
   ), []);
 

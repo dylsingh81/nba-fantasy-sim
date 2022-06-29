@@ -9,9 +9,11 @@ var dataLoaded = false;
 function Roster() {
 
   const [roster, setRoster] = useState([]);
+  // Load data with no decimals
   if(!dataLoaded){
     Papa.parse(rosterCSV, {
       download: true,
+      dynamicTyping: true,
       header: true,
       complete: function (input) {
         const records = input.data;

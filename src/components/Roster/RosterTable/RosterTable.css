@@ -24,7 +24,7 @@ img{
     border-radius: 50%;
     display: block;
     max-width: 230px;
-    max-height: 95px;
+    max-height: 105px;
     width: auto;
     height: auto;
     margin: auto !important;
@@ -43,4 +43,23 @@ img{
     max-height: fit-content;
     z-index: 2;
     background-color: #f2f2f2;
+}
+
+
+.default-filter{
+    width: 100%;
+}
+
+.filter-header{
+    color: black;
+    font-size: 1.2em;
+}
+
+.cant-highlight{
+    user-select: none;
+}
+
+.sorted-cell{
+    font-weight: bolder;
+    background-color: white !important;
 }
