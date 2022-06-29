@@ -135,6 +135,7 @@ function Table({ columns, data }) {
       defaultColumn, // Be sure to pass the defaultColumn option
       filterTypes,
       initialState: { pageSize: 10 },
+      disableSortRemove: true,
     },
     useFilters,
 
