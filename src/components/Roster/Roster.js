@@ -4,13 +4,12 @@ import Papa from 'papaparse';
 import rosterCSV from '../../db/roster_trimmed.csv';
 import RosterTable from "./RosterTable/RosterTable";
 
-var dataLoaded = false;
-
 function Roster() {
 
   const [roster, setRoster] = useState([]);
-  // Load data with no decimals
-  if(!dataLoaded){
+
+  //Run command when enter page
+  React.useEffect(() => {
     Papa.parse(rosterCSV, {
       download: true,
       dynamicTyping: true,
@@ -19,18 +18,16 @@ function Roster() {
         const records = input.data;
         setRoster(records);
         console.log("Data Loaded")
-        dataLoaded = true
       }
     });
   }
-  
+    , [])
+
 
   return (
     <div className='roster-mask'>
       <div className='roster-table'>
-        
         <RosterTable roster={roster}></RosterTable>
-
       </div>
     </div>
   );
