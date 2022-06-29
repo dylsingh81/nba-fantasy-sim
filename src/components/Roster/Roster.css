@@ -14,5 +14,5 @@
     height: 85vh;
     margin-left: 2vw !important;
     margin-right: 2vw !important;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: auto; /* Hide horizontal scrollbar */
 }
