@@ -213,7 +213,7 @@ function Table({ columns, data }) {
                       var era = row.original.Era;
 
                       //Remove first 2 words if era is old
-                      if (era == "Old") {
+                      if (era === "Old") {
                         teamName = teamName.substring(teamName.indexOf(" ") + 1);
                         teamName = teamName.substring(teamName.indexOf(" ") + 1);
                       }
