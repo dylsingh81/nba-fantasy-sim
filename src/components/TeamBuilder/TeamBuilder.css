@@ -1,0 +1,23 @@
+.player-pic{  
+    border-radius: 50%;
+    max-width: 230px !important;
+    max-height: 105px !important;
+    width: auto;
+    height: auto;
+    background-color:rgba(0, 0, 0, 0.692);
+
+}
+
+.pic-container{
+    height: 105px !important;
+    margin-bottom: 20px;
+}
+
+#team-container{
+    text-align: center;
+    background-image: url('./bg3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    padding-top: 10vh;   
+}

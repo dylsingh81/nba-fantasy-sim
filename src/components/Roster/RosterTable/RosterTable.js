@@ -61,7 +61,7 @@ function SelectColumnFilter({
     <div className="input-group">
       <select
         value={filterValue}
-        className="form-control"
+        className="form-select"
         onChange={(e) => {
           setFilter(e.target.value || undefined);
         }}
@@ -206,7 +206,7 @@ function Table({ columns, data }) {
                       // Replace space with dash
                       playerName = playerName.replace(/\s/g, "-");
                       // add path to player image
-                      var playerImagePath = require("../../player_images/" + playerName + ".png");
+                      var playerImagePath = require("../../../db/player_images/" + playerName + ".png");
 
 
                       //get team name
@@ -225,7 +225,7 @@ function Table({ columns, data }) {
                       teamName = teamName.replace(/\s/g, "-");
 
                       // add path to team image
-                      var teamImagePath = require("../../team_images/" + teamName + ".svg");
+                      var teamImagePath = require("../../../db/team_images/" + teamName + ".svg");
 
 
 
