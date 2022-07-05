@@ -1,0 +1,33 @@
+.player-image{  
+    border-radius: 50%;
+    max-width: 200px !important;
+    max-height: 85px !important;
+    width: auto;
+    height: auto;
+    background-color:rgba(0, 0, 0, 0.692);
+    position: relative;
+
+}
+
+
+.player-starter-pill{
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 4px 2px;    
+    margin-left: 2vw !important;
+    margin-right: 2vw !important;
+    margin-bottom: 2vw !important;
+}
+
+.player-reserve-pill{
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 4px 2px;    
+    margin-right: 1vw !important;
+    margin-left: 1vw !important;
+
+}

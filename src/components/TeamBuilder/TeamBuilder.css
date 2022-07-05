@@ -1,23 +1,67 @@
-.player-pic{  
-    border-radius: 50%;
-    max-width: 230px !important;
-    max-height: 105px !important;
-    width: auto;
+.line-sep{
+    border-left: 2px solid white;   
+}
+
+.line-right{
+    border-right: 2px dotted white;
+}
+
+
+.team-container{
     height: auto;
-    background-color:rgba(0, 0, 0, 0.692);
-
-}
-
-.pic-container{
-    height: 105px !important;
-    margin-bottom: 20px;
-}
-
-#team-container{
     text-align: center;
-    background-image: url('./bg3.jpg');
+    background-color: rgba(78, 59, 223, 0.568);
+    border-radius: 10px;
+}
+
+.team-mask{
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    background-image: url('./images/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
-    padding-top: 10vh;   
+    background-attachment: scroll !important;
+    padding-top: 10vh;
+    padding-left: 2vw;
+    padding-right: 2vw;   
+    padding-bottom: 5vh;
+}
+
+.header{
+    color: white;
+    text-decoration: underline;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.budget-header{
+    color: white;
+    text-decoration: underline;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: rgba(120, 3, 188, 0.651);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: 30px !important;
+    font-weight: bold;
+}
+
+.save-footer{
+    color: white;
+    text-decoration: underline;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: rgba(120, 3, 188, 0.651);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 20vw !important;
+    margin-right: 20vw !important;
+}
+
+#team-intro{
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
 }

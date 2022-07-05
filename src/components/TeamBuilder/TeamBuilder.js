@@ -1,38 +1,93 @@
 import React from 'react';
+import PlayerPill from './PlayerPill/PlayerPill';
 import './TeamBuilder.css';
 
 function TeamBuilder() {
-  var playerName = "Aaron-Gordon";
-  var playerImagePath1 = require("../../db/player_images/" + playerName + ".png");
-
-  playerName = "Bill-Russell";
-  var playerImagePath2 = require("../../db/player_images/" + playerName + ".png");
 
   return (
-    <div className='mask'>
-      <div class="container" id="team-container">
-        <div class="row">
-          <div class="col-md-11 pic-container">
-            <img src={playerImagePath1} class="player-pic img-fluid" alt="?"/>
+    <div className='team-mask'>
+
+      <span id="team-intro"> 
+        <h3>Welcome to TeamBuilder!</h3>
+        Click on the buttons to select players and Save/Download your team when done!
+      </span>
+
+      <div className='row mx-5 budget-header'>
+        <div className='col-md-4'>
+          <span>Budget Total:</span>
+        </div>
+        
+        <div className='col-md-4'>
+          <span>Budget Spent:</span>
+        </div>
+
+        <div className='col-md-4'>
+          <span>Budget Remaining: </span>
+        </div>
+
+      </div>
+
+      <div className=" team-container">
+        <div className='row header'>
+          <div className='col-md-8 line-right'>
+              <h3>Starters</h3>
+          </div>
+          <div className='col-md-4'>
+              <h3>Reserves</h3>
           </div>
         </div>
-        <div class="row">
-        <div class="col-md-6 pic-container">
-            <img src={playerImagePath2} class="player-pic img-fluid" alt="?"/>
-          </div>
-          <div class="col-md-4 pic-container">
-            <img src={playerImagePath1} class="player-pic img-fluid" alt="?" />
+
+        <div className='row'>
+          <div className='col-md-8 line-right'>
+            <PlayerPill position="PG" type="starter"> </PlayerPill>
           </div>
         </div>
-        <div class="row">
-        <div class="col-md-7 pic-container">
-            <img src={playerImagePath1} class="player-pic img-fluid" alt="?"/>
+
+        <div className='row'>
+          <div className='col-md-8 line-right'>
+            <PlayerPill position="SG" type="starter"/>
           </div>
-          <div class="col-md-1 pic-container">
-            <img src={playerImagePath1} class="player-pic img-fluid" alt="?"/>
+          <div className='col-md-4' id="first-reserve">
+            <PlayerPill type="reserve"/>
           </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-md-8 line-right'>
+            <PlayerPill position="SF" type="starter"/>
+          </div>
+          <div className='col-md-4'>
+            <PlayerPill type="reserve"/>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-md-8 line-right'>
+            <PlayerPill position="PF" type="starter"/>
+          </div>
+          <div className='col-md-4' id="last-reserve">
+            <PlayerPill type="reserve"/>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-md-8 line-right'>
+            <PlayerPill position="C" type="starter"/>
+          </div>
+         
         </div>
       </div>
+      
+
+        <div className='row py-4 save-footer'>
+          <div className='col-md-6'>
+            <button className="btn btn-primary">Download Team</button>
+          </div>
+          <div className='col-md-6  '>
+          <button className="btn btn-success">Save Team</button>
+          </div>
+      </div>
+      
     </div>
   );
 }

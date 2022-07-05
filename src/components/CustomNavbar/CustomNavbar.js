@@ -13,7 +13,7 @@ function CustomNavbar() {
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/team">
-            <Nav.Link>Team Builer</Nav.Link>
+            <Nav.Link>Team Builder</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/simulator">
             <Nav.Link>Simulator</Nav.Link>
