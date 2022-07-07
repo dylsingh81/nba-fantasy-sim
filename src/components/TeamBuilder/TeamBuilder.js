@@ -66,7 +66,7 @@ function TeamBuilder() {
     newPlayersArray[0]["Image Available"] = player["Image Available"];
 
     setplayersArray(newPlayersArray);
-    console.log(playersArray);
+    //console.log(playersArray);
   }
 
   //Set players array to 8 dicts with player id equal to -1, position equal to "", and type equal to "starter"
@@ -92,7 +92,7 @@ function TeamBuilder() {
       complete: function (input) {
         const records = input.data;
         setRoster(records);
-        console.log("Data Loaded")
+        //console.log("Data Loaded")
       }
     });
   }
