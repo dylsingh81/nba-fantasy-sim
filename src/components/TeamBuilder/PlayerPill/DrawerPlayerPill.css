@@ -1,0 +1,23 @@
+.drawer-player-image {
+    border-radius: 50%;
+    max-width: 130px !important;
+    max-height: 100px !important;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.692);
+    position: relative;
+
+}
+
+
+.drawer-player-starter-pill {
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 4px 2px;
+    margin-left: 2vw !important;
+    margin-right: 2vw !important;
+    margin-bottom: 2vw !important;
+    background: rgb(86, 87, 205);
+    background: radial-gradient(circle, rgba(86, 87, 205, 1) 23%, rgba(0, 151, 255, 1) 100%);
+}

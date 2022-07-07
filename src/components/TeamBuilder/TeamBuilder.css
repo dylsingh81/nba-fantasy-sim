@@ -65,3 +65,8 @@
     font-size: larger;
     font-weight: bolder;
 }
+
+.drawer{
+    min-width: 45vw;
+    background: rgba(255, 255, 255, 0.75) !important;
+}
