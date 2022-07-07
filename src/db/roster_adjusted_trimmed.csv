@@ -8,7 +8,7 @@ Unique ID,Era,name,Image Available,team,Position,overallAttribute,drive,midRange
 6,Old,Larry Bird,Yes,1985 86 Boston Celtics,F,97,70,96,96,84,69,84,76,14,89,G
 7,Old,Magic Johnson,Yes,1986 87 Los Angeles Lakers,G-F,97,88,87,79,93,79,76,74,2,84,G
 8,Old,Kobe Bryant,Yes,2000 01 Los Angeles Lakers,G-F,97,92,94,79,84,57,86,68,17,85,G
-9,Old,Shaquille O'Neal,Yes,2000 01 Los Angeles Lakers,C,97,78,35,26,72,98,56,96,30,52,G
+9,Old,Shaquille ONeal,Yes,2000 01 Los Angeles Lakers,C,97,78,35,26,72,98,56,96,30,52,G
 10,Old,Hakeem Olajuwon,Yes,1993 94 Houston Rockets,C,97,64,77,63,62,94,54,95,40,71,G
 11,Old,Kevin Garnett,Yes,2003 04 Minnesota Timberwolves,F-C,97,85,94,69,76,94,68,88,31,79,G
 12,Old,Stephen Curry,Yes,2015 16 Golden State Warriors,G,97,80,93,99,93,46,83,50,4,91,G
@@ -71,7 +71,7 @@ Unique ID,Era,name,Image Available,team,Position,overallAttribute,drive,midRange
 69,Old,Marc Gasol,Yes,2012 13 Memphis Grizzlies,C,89,55,94,32,58,74,56,89,48,85,C
 70,Old,Chauncey Billups,Yes,2003 04 Detroit Pistons,G,89,77,78,84,89,41,84,59,9,87,C
 71,Old,Brandon Roy,Yes,2009 10 Portland Trail Blazers,G,89,89,95,76,81,48,77,69,17,78,C
-72,Old,Amar'e Stoudemire,Yes,2004 05 Phoenix Suns,F-C,89,77,90,50,53,77,57,76,47,73,C
+72,Old,Amare Stoudemire,Yes,2004 05 Phoenix Suns,F-C,89,77,90,50,53,77,57,76,47,73,C
 73,Old,Shawn Kemp,Yes,1995 96 Seattle Supersonics,F-C,89,82,60,53,72,87,67,81,37,74,C
 74,Old,Russell Westbrook,Yes,2011 12 Oklahoma City Thunder,G,89,90,88,72,87,50,80,44,17,82,C
 75,Old,Chris Mullin,Yes,1990 91 Golden State Warriors,F-G,89,70,91,90,71,49,81,71,28,88,C
