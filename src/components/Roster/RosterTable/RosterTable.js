@@ -5,7 +5,7 @@ import {
   , useSortBy
   , usePagination
   , useFilters
-  
+
 
 
 } from "react-table";
@@ -244,9 +244,18 @@ function Table({ columns, data }) {
                     }
                     else {
                       //console.log("No Image")
+                      playerImagePath = require("../../../db/player_images/mystery.png");
                       return (
-                        <td key="" className="align-middle"> No </td>
-                      );
+                        <td key="key" className="align-middle">
+                          <div className="text-center">
+                            <div className="layered-container">
+                              <div className="image-bottom-container">
+                                <img className="image-bottom" src={playerImagePath} alt="" />
+                              </div>
+
+                            </div>
+                          </div>
+                        </td>);
                     }
                   }
                   else {
