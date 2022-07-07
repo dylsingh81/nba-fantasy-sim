@@ -67,6 +67,7 @@ function TeamBuilder() {
 
     setplayersArray(newPlayersArray);
     //console.log(playersArray);
+    setShow(false);
   }
 
   //Set players array to 8 dicts with player id equal to -1, position equal to "", and type equal to "starter"
