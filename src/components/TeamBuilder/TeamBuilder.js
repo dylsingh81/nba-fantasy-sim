@@ -13,13 +13,17 @@ function TeamBuilder() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const [positionChoice, setPositionChoice] = useState("");
+  const [pillChoice, setPillChoice] = useState(-1);
   const [roster, setRoster] = useState([]);
   const [drawerPills, setDrawerPills] = useState([]);
   const [playersArray, setplayersArray] = useState([]);
 
 
-  function handleShow(e, position) {
+  function handleShow(e, position, id) {
     setShow(true);
+
+    setPillChoice(id);
+
     if (position === undefined) {
       setPositionChoice("player:")
     }
@@ -55,15 +59,15 @@ function TeamBuilder() {
       setDrawerPills(roster.filter(player => player.Position.includes("C")));
     }*/
 
-    //console.log(drawerPills);
   }
 
   function handlePlayerSet(e, player) {
     //Make copy of playersArray
     var newPlayersArray = [...playersArray];
     // Change player fields
-    newPlayersArray[0].name = player.name;
-    newPlayersArray[0]["Image Available"] = player["Image Available"];
+    //console.log(newPlayersArray, pillChoice);
+    newPlayersArray[pillChoice].name = player.name;
+    newPlayersArray[pillChoice]["Image Available"] = player["Image Available"];
 
     setplayersArray(newPlayersArray);
     //console.log(playersArray);
@@ -71,17 +75,19 @@ function TeamBuilder() {
   }
 
   //Set players array to 8 dicts with player id equal to -1, position equal to "", and type equal to "starter"
-  for (let i = 0; i < 8; i++) {
-    playersArray.push({
-      "Image Available": "no",
-      position: "",
-      type: "starter",
-    });
-  }
+  if (playersArray.length < 8) {
+    for (let i = 0; i < 8; i++) {
+      playersArray.push({
+        "Image Available": "no",
+        position: "",
+        type: "starter",
+      });
+    }
 
-  // Set final 3 of players array to type
-  for (let i = playersArray.length - 1; i > playersArray.length - 4; i--) {
-    playersArray[i].type = "reserve";
+    // Set final 3 of players array to type
+    for (let i = playersArray.length - 1; i > playersArray.length - 4; i--) {
+      playersArray[i].type = "reserve";
+    }
   }
 
   //Run command when enter page
@@ -146,40 +152,40 @@ function TeamBuilder() {
 
         <div className='row'>
           <div className='col-md-8 line-right'>
-            <PlayerPill position="PG" handleShow={handleShow} player={playersArray[0]} handlePlayerSet={handlePlayerSet}> </PlayerPill>
+            <PlayerPill id={0} position="PG" handleShow={handleShow} player={playersArray[0]}> </PlayerPill>
           </div>
         </div>
 
         <div className='row'>
           <div className='col-md-8 line-right'>
-            <PlayerPill position="SG" handleShow={handleShow} player={playersArray[1]} handlePlayerSet={handlePlayerSet} />
+            <PlayerPill id={1} position="SG" handleShow={handleShow} player={playersArray[1]} />
           </div>
           <div className='col-md-4' id="first-reserve" >
-            <PlayerPill player={playersArray[5]} handleShow={handleShow} handlePlayerSet={handlePlayerSet} />
+            <PlayerPill id={5} player={playersArray[5]} handleShow={handleShow} />
           </div>
         </div>
 
         <div className='row'>
           <div className='col-md-8 line-right'>
-            <PlayerPill position="SF" handleShow={handleShow} player={playersArray[2]} handlePlayerSet={handlePlayerSet}/>
+            <PlayerPill id={2} position="SF" handleShow={handleShow} player={playersArray[2]} />
           </div>
           <div className='col-md-4'>
-            <PlayerPill type="reserve" handleShow={handleShow} player={playersArray[6]} handlePlayerSet={handlePlayerSet}/>
+            <PlayerPill id={6} type="reserve" handleShow={handleShow} player={playersArray[6]} />
           </div>
         </div>
 
         <div className='row'>
           <div className='col-md-8 line-right'>
-            <PlayerPill position="PF" handleShow={handleShow} player={playersArray[3]} handlePlayerSet={handlePlayerSet}/>
+            <PlayerPill id={3} position="PF" handleShow={handleShow} player={playersArray[3]} />
           </div>
           <div className='col-md-4' id="last-reserve">
-            <PlayerPill type="reserve" handleShow={handleShow} player={playersArray[7]} handlePlayerSet={handlePlayerSet}/>
+            <PlayerPill id={7} type="reserve" handleShow={handleShow} player={playersArray[7]} />
           </div>
         </div>
 
         <div className='row'>
           <div className='col-md-8 line-right'>
-            <PlayerPill position="C" handleShow={handleShow} player={playersArray[4]} handlePlayerSet={handlePlayerSet}/>
+            <PlayerPill id={4} position="C" handleShow={handleShow} player={playersArray[4]} />
           </div>
 
         </div>

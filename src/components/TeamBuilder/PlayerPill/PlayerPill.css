@@ -19,6 +19,7 @@
     margin-left: 2vw !important;
     margin-right: 2vw !important;
     margin-bottom: 2vw !important;
+    cursor: pointer;
 }
 
 .player-reserve-pill{
@@ -29,5 +30,5 @@
     margin: 4px 2px;    
     margin-right: 1vw !important;
     margin-left: 1vw !important;
-
+    cursor: pointer;
 }

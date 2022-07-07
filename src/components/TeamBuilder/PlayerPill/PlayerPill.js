@@ -2,7 +2,11 @@ import React from 'react';
 import './PlayerPill.css';
 
 function PlayerPill(props) {
+
+    
+
     var playerImagePath;
+    
     if(props.player["Image Available"] === "no") {
         playerImagePath = require("../../../db/player_images/mystery.png");
     }
@@ -14,7 +18,7 @@ function PlayerPill(props) {
 
     if (props.player.type === "starter") {
         return (
-            <div className="player-starter-pill rounded-pill row align-items-center" onClick={event => props.handleShow(event, props.position)}>
+            <div className="player-starter-pill rounded-pill row align-items-center" onClick={event => props.handleShow(event, props.position, props.id)}>
                 <div className='col-md-1'>
                     <h3>{props.position}</h3>
                 </div>
@@ -31,7 +35,7 @@ function PlayerPill(props) {
     //if reserve
     if (props.player.type === "reserve"){
         return (
-            <div className="player-reserve-pill rounded-pill row align-items-center" onClick={props.handleShow}>
+            <div className="player-reserve-pill rounded-pill row align-items-center" onClick={event => props.handleShow(event, "", props.id)}>
                 <div className='col-md-4'>
                     <img src={playerImagePath} className="player-image" alt="NBA PLAYER" />
                 </div>

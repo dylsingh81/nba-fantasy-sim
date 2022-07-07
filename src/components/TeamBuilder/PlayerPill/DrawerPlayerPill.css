@@ -20,4 +20,11 @@
     margin-bottom: 2vw !important;
     background: rgb(86, 87, 205);
     background: radial-gradient(circle, rgba(86, 87, 205, 1) 23%, rgba(0, 151, 255, 1) 100%);
+    cursor: pointer;
+}
+
+.drawer-player-starter-pill:hover{
+    background-color: rgb(232, 232, 238);
+    background: radial-gradient(circle, rgb(255, 255, 255) 23%, rgba(0, 151, 255, 1) 100%);
+
 }
