@@ -18,7 +18,7 @@ function PlayerPill(props) {
 
     if (props.player.type === "starter") {
         return (
-            <div className="player-starter-pill rounded-pill row align-items-center" onClick={event => props.handleShow(event, props.position, props.id)}>
+            <div className={"player-starter-pill rounded-pill row align-items-center " + props.player.isSelectedClass} onClick={event => props.handleShow(event, props.position, props.id)}>
                 <div className='col-md-1'>
                     <h3>{props.position}</h3>
                 </div>
@@ -35,7 +35,7 @@ function PlayerPill(props) {
     //if reserve
     if (props.player.type === "reserve"){
         return (
-            <div className="player-reserve-pill rounded-pill row align-items-center" onClick={event => props.handleShow(event, "", props.id)}>
+            <div className={"player-reserve-pill rounded-pill row align-items-center " + props.player.isSelectedReserveClass} onClick={event => props.handleShow(event, "", props.id)}>
                 <div className='col-md-4'>
                     <img src={playerImagePath} className="player-image" alt="NBA PLAYER" />
                 </div>

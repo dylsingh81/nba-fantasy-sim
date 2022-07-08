@@ -14,7 +14,7 @@ function DrawerPlayerPill(props) {
     }
 
         return (
-            <div className="drawer-player-starter-pill rounded-pill row align-items-center" onClick={event => props.handlePlayerSet(event, props.player)}>
+            <div className={"drawer-player-starter-pill rounded-pill row align-items-center bin_" + props.player.overall_bin} onClick={event => props.handlePlayerSet(event, props.player)}>
                 
                 <div className='col-md-4'>
                     <img src={playerImagePath} className="drawer-player-image" alt="NBA PLAYER" />

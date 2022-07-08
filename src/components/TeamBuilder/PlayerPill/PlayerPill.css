@@ -20,10 +20,14 @@
     margin-right: 2vw !important;
     margin-bottom: 2vw !important;
     cursor: pointer;
+    
+}
+.player-starter-pill:hover{
+    background-color: rgb(50, 50, 50);
 }
 
 .player-reserve-pill{
-    background-color: rgba(0, 0, 0, 0.692);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -31,4 +35,46 @@
     margin-right: 1vw !important;
     margin-left: 1vw !important;
     cursor: pointer;
+}
+
+.player-reserve-pill:hover{
+    background-color: rgb(50, 50, 50);
+    color: black;
+}
+
+.player-selected{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000, #434343);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+
+.player-selected:hover{
+    background: linear-gradient(-45deg, blue, gray, red);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+.reserve-selected{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000, #434343);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+.reserve-selected:hover{
+    background: linear-gradient(-45deg, red, gray, blue);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

@@ -68,6 +68,10 @@ function TeamBuilder() {
     //console.log(newPlayersArray, pillChoice);
     newPlayersArray[pillChoice].name = player.name;
     newPlayersArray[pillChoice]["Image Available"] = player["Image Available"];
+    newPlayersArray[pillChoice].overall_bin = player.overall_bin;
+    newPlayersArray[pillChoice].overallAttribute = player.overallAttribute;
+    newPlayersArray[pillChoice].isSelectedClass = "player-selected"
+    newPlayersArray[pillChoice].isSelectedReserveClass = "reserve-selected"
 
     setplayersArray(newPlayersArray);
     //console.log(playersArray);

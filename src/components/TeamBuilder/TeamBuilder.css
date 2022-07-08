@@ -1,72 +1,79 @@
-.line-sep{
-    border-left: 2px solid white;   
+.line-sep {
+    border-left: 2px solid black;
 }
 
-.line-right{
-    border-right: 2px dotted white;
+.line-right {
+    border-right: 2px dotted black;
 }
 
 
-.team-container{
+.team-container {
     height: auto;
     text-align: center;
-    background-color: rgba(78, 59, 223, 0.568);
+    background: #3494E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(236, 110, 173, 0.701), rgba(52, 147, 230, 0.7), rgba(236, 110, 173, 0.7));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(236, 110, 173, 0.701), rgba(52, 147, 230, 0.7), rgba(236, 110, 173, 0.7));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-radius: 10px;
 }
 
-.team-mask{
+.team-mask {
     height: auto;
     min-height: 100vh;
     text-align: center;
     background-image: url('./images/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     background-attachment: scroll !important;
     padding-top: 10vh;
     padding-left: 2vw;
-    padding-right: 2vw;   
+    padding-right: 2vw;
     padding-bottom: 5vh;
 }
 
-.header{
+.header {
     color: white;
     text-decoration: underline;
     padding-bottom: 2vh;
     padding-top: 2vh;
 }
 
-.budget-header{
+.budget-header {
     color: white;
     text-decoration: underline;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    background-color: rgba(120, 3, 188, 0.651);
+    background-color: #342056;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     margin-top: 30px !important;
     font-weight: bold;
+    font-size: 1.5vw;
 }
 
-.save-footer{
+.save-footer {
     color: white;
     text-decoration: underline;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    background-color: rgba(120, 3, 188, 0.651);
+    background-color: #342056;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-left: 20vw !important;
     margin-right: 20vw !important;
 }
 
-#team-intro{
+#team-intro {
     color: white;
     font-size: larger;
     font-weight: bolder;
 }
 
-.drawer{
+.drawer {
     min-width: 45vw;
-    background: rgba(255, 255, 255, 0.75) !important;
+    background: rgba(209, 209, 209, 0.9) !important;
 }
