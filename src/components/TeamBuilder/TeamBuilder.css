@@ -18,6 +18,7 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     border-radius: 10px;
+    user-select: none;
 }
 
 .team-mask {
@@ -36,14 +37,14 @@
 }
 
 .header {
-    color: white;
+    color: rgb(175, 175, 175);;
     text-decoration: underline;
     padding-bottom: 2vh;
     padding-top: 2vh;
 }
 
 .budget-header {
-    color: white;
+    color: rgb(175, 175, 175);
     text-decoration: underline;
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -68,7 +69,7 @@
 }
 
 #team-intro {
-    color: white;
+    color: rgb(175, 175, 175);;
     font-size: larger;
     font-weight: bolder;
 }
@@ -76,4 +77,20 @@
 .drawer {
     min-width: 45vw;
     background: rgba(209, 209, 209, 0.9) !important;
+}
+
+.team-name{
+    max-width: fit-content;
+}
+
+.total-btn {
+    padding: 2px !important;
+}
+
+.spentClass{
+    color: red;
+}
+
+.remainingClass{
+    color: green;
 }

@@ -28,7 +28,7 @@ function DrawerPlayerPill(props) {
                 </div>
 
                 <div className='col-md-2'>
-                    <h3>{props.player["overall_bin"]}</h3>
+                    <h3>{"$" + props.player["price"]}</h3>
                 </div>
             </div>
         );

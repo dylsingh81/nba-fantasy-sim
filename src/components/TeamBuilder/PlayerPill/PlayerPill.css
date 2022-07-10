@@ -78,3 +78,7 @@
         background-position: 0% 50%;
     }
 }
+
+.line-sep {
+    border-left: 2px dashed white;
+}

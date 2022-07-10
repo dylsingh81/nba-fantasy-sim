@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Offcanvas } from 'react-bootstrap';
 import DrawerPlayerPill from './PlayerPill/DrawerPlayerPill';
 import Papa from 'papaparse';
-import rosterCSV from '../../db/roster_adjusted_trimmed.csv';
+import rosterCSV from '../../db/roster_adjusted_trimmed_salaries.csv';
 
 function TeamBuilder() {
 
@@ -17,7 +17,9 @@ function TeamBuilder() {
   const [roster, setRoster] = useState([]);
   const [drawerPills, setDrawerPills] = useState([]);
   const [playersArray, setplayersArray] = useState([]);
-
+  const [teamName, setTeamName] = useState("Team Name");
+  const [budget, setBudget] = useState(40);
+  const [spentBudget, setSpentBudget] = useState(0);
 
   function handleShow(e, position, id) {
     setShow(true);
@@ -68,7 +70,7 @@ function TeamBuilder() {
     //console.log(newPlayersArray, pillChoice);
     newPlayersArray[pillChoice].name = player.name;
     newPlayersArray[pillChoice]["Image Available"] = player["Image Available"];
-    newPlayersArray[pillChoice].overall_bin = player.overall_bin;
+    newPlayersArray[pillChoice].price = player.price;
     newPlayersArray[pillChoice].overallAttribute = player.overallAttribute;
     newPlayersArray[pillChoice].isSelectedClass = "player-selected"
     newPlayersArray[pillChoice].isSelectedReserveClass = "reserve-selected"
@@ -76,6 +78,10 @@ function TeamBuilder() {
     setplayersArray(newPlayersArray);
     //console.log(playersArray);
     setShow(false);
+
+    //Set spentBudget to sum of all player prices
+    setSpentBudget(playersArray.reduce((acc, curr) => acc + curr.price, 0));
+
   }
 
   //Set players array to 8 dicts with player id equal to -1, position equal to "", and type equal to "starter"
@@ -85,6 +91,7 @@ function TeamBuilder() {
         "Image Available": "no",
         position: "",
         type: "starter",
+        price: 0,
       });
     }
 
@@ -103,7 +110,7 @@ function TeamBuilder() {
       complete: function (input) {
         const records = input.data;
         setRoster(records);
-        //console.log("Data Loaded")
+        //console.log("Data Loaded", records);
       }
     });
   }
@@ -131,20 +138,33 @@ function TeamBuilder() {
 
       <div className='row mx-5 budget-header'>
         <div className='col-md-4'>
-          <span>Budget Total:</span>
+          <span className="">{"Budget Total:"}</span>
+          <button className={"ms-2 btn btn-primary total-btn mb-1"}> {"$" + budget}</button>
         </div>
 
         <div className='col-md-4'>
-          <span>Budget Spent:</span>
+          <span>{"Budget Spent: "}</span>
+          <span className={"spentClass"}> {"$" + spentBudget}</span>
         </div>
 
         <div className='col-md-4'>
-          <span>Budget Remaining: </span>
+          <span>{"Budget Remaining: "}</span>
+          <span className={"remainingClass"}> {"$" + (budget-spentBudget)}</span>
         </div>
 
       </div>
 
       <div className=" team-container">
+
+        <div className='row pt-2'>
+          <div className="col-md-4 offset-md-5">
+            <div className="input-group input-group-lg row pt-2 team-name ">
+              <input type="text" className="form-control" placeholder='Team Name' value={teamName} onChange={(e) => setTeamName(e.target.value)}></input>
+            </div>
+          </div>
+        </div>
+
+
         <div className='row header'>
           <div className='col-md-8 line-right'>
             <h3>Starters</h3>
