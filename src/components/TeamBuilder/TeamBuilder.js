@@ -7,6 +7,8 @@ import { Offcanvas } from 'react-bootstrap';
 import DrawerPlayerPill from './PlayerPill/DrawerPlayerPill';
 import Papa from 'papaparse';
 import rosterCSV from '../../db/roster_adjusted_trimmed_salaries.csv';
+import { Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 function TeamBuilder() {
 
@@ -20,6 +22,17 @@ function TeamBuilder() {
   const [teamName, setTeamName] = useState("Team Name");
   const [budget, setBudget] = useState(40);
   const [spentBudget, setSpentBudget] = useState(0);
+
+  const [modalShow, modalSetShow] = useState(false);
+
+  const modalHandleClose = () => modalSetShow(false);
+  const modalHandleShow = () => modalSetShow(true);
+
+  const handleDownloadTeam = () => {
+    if(spentBudget > budget) {
+      alert("You have exceeded your budget! Please adjust your team or change budget.");
+    }
+  }
 
   function handleShow(e, position, id) {
     setShow(true);
@@ -131,6 +144,16 @@ function TeamBuilder() {
         </Offcanvas.Body>
       </Offcanvas>
 
+      <Modal show={modalShow} onHide={modalHandleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Set Budget</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <span>Choose New Budget: </span>
+          <input type="number" value={budget} onChange={(e) => setBudget(e.target.value)} />
+        </Modal.Body>
+      </Modal>
+
       <span id="team-intro">
         <h3>Welcome to TeamBuilder!</h3>
         Click on the buttons to select players and Save/Download your team when done!
@@ -139,7 +162,7 @@ function TeamBuilder() {
       <div className='row mx-5 budget-header'>
         <div className='col-md-4'>
           <span className="">{"Budget Total:"}</span>
-          <button className={"ms-2 btn btn-primary total-btn mb-1"}> {"$" + budget}</button>
+          <button onClick={modalHandleShow} className={"ms-2 btn btn-primary total-btn mb-1"}> {"$" + budget}</button>
         </div>
 
         <div className='col-md-4'>
@@ -149,7 +172,7 @@ function TeamBuilder() {
 
         <div className='col-md-4'>
           <span>{"Budget Remaining: "}</span>
-          <span className={"remainingClass"}> {"$" + (budget-spentBudget)}</span>
+          <span className={"remainingClass"}> {"$" + (budget - spentBudget)}</span>
         </div>
 
       </div>
@@ -218,7 +241,7 @@ function TeamBuilder() {
 
       <div className='row py-4 save-footer'>
         <div className='col-md-6'>
-          <button className="btn btn-primary">Download Team</button>
+          <button onClick={handleDownloadTeam} className="btn btn-primary">Download Team</button>
         </div>
         <div className='col-md-6  '>
           <button className="btn btn-success">Save Team</button>

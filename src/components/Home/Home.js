@@ -2,6 +2,8 @@
 import React from "react";
 import './Home.css';
 import { Carousel } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 const Home = () => {
   return (
@@ -10,10 +12,19 @@ const Home = () => {
         <div className="mask d-flex justify-content-center align-items-center h-100">
           <div className="text-white text-center">
             <h1 className="mb-4 display-1 font-weight-bold ">NBA Fantasy GM</h1>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Build Team</a>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-              target="" role="button">Run Simulation</a>
+            <div className="row">
+
+              <LinkContainer to="/team" className="col col-md-4 offset-md-2">
+                <Nav.Link>
+                  <button className="btn btn-outline-light btn-lg m-2">Build Team</button>
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/simulator" className="col col-md-6">
+                <Nav.Link>
+                  <button className="btn btn-outline-light btn-lg m-2">Run Simulation</button>
+                </Nav.Link>
+              </LinkContainer>
+            </div>
           </div>
         </div>
         <Carousel.Caption>
@@ -25,8 +36,11 @@ const Home = () => {
           <div className="text-white text-center">
             <h1 className="mb-3 display-2">Build your Squad</h1>
             <h5 className="mb-4">Use a $50 budget to build the perfect squad</h5>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Start</a>
+            <LinkContainer to="/team">
+              <Nav.Link>
+                <button className="btn btn-outline-light btn-lg m-2">Start</button>
+              </Nav.Link>
+            </LinkContainer>
           </div>
         </div>
 
@@ -37,11 +51,14 @@ const Home = () => {
       <Carousel.Item>
 
         <div className="mask d-flex justify-content-center align-items-center h-100">
-        <div className="text-white text-center">
+          <div className="text-white text-center">
             <h1 className="mb-3 display-2">Run a Simulation</h1>
             <h5 className="mb-4">Use built teams to see the results of a H2H matchup</h5>
-            <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button" rel="nofollow" target="">Start</a>
+            <LinkContainer to="/simulator">
+                <Nav.Link>
+                  <button className="btn btn-outline-light btn-lg m-2">Start</button>
+                </Nav.Link>
+              </LinkContainer>
           </div>
         </div>
 
