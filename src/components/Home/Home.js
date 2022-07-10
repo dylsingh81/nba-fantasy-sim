@@ -3,7 +3,7 @@ import React from "react";
 import './Home.css';
 import { Carousel } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 
 const Home = () => {
   return (

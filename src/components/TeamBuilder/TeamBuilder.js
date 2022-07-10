@@ -8,7 +8,7 @@ import DrawerPlayerPill from './PlayerPill/DrawerPlayerPill';
 import Papa from 'papaparse';
 import rosterCSV from '../../db/roster_adjusted_trimmed_salaries.csv';
 import { Modal } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import TeamModal from './TeamModal/TeamModal';
 
 function TeamBuilder() {
 
@@ -24,15 +24,8 @@ function TeamBuilder() {
   const [spentBudget, setSpentBudget] = useState(0);
 
   const [modalShow, modalSetShow] = useState(false);
-
   const modalHandleClose = () => modalSetShow(false);
   const modalHandleShow = () => modalSetShow(true);
-
-  const handleDownloadTeam = () => {
-    if(spentBudget > budget) {
-      alert("You have exceeded your budget! Please adjust your team or change budget.");
-    }
-  }
 
   function handleShow(e, position, id) {
     setShow(true);
@@ -241,7 +234,7 @@ function TeamBuilder() {
 
       <div className='row py-4 save-footer'>
         <div className='col-md-6'>
-          <button onClick={handleDownloadTeam} className="btn btn-primary">Download Team</button>
+          <TeamModal></TeamModal>
         </div>
         <div className='col-md-6  '>
           <button className="btn btn-success">Save Team</button>
